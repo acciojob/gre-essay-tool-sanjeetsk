@@ -1,8 +1,10 @@
 //your code here
 const inp = document.getElementById("evaluatedText");
-count count=document.getElementById("wordCount");
+count wordCount=document.getElementById("wordCount");
 inp.addEventListener('input', calculatedWords());
 
 function calculatedWords(e) {
-	e.target.value.split(" ").length;	
+	const text = this.value.trim();
+	const count = text === '' ? 0 : text.split(/\s+/).length;
+	wordCount.textContent = count;
 }
